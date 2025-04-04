@@ -1,7 +1,6 @@
 package com.example.rx_java_training.rx;
 
 import com.example.rx_java_training.entity.Entity;
-import com.example.rx_java_training.exceptions.NotImplementedException;
 
 import java.util.List;
 

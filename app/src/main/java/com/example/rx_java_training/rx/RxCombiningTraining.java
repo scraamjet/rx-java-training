@@ -1,6 +1,5 @@
 package com.example.rx_java_training.rx;
 
-
 import java.util.Collections;
 import java.util.List;
 

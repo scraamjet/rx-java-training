@@ -1,12 +1,10 @@
 package com.example.rx_java_training.rx;
 
 import com.example.rx_java_training.exceptions.ExpectedException;
-import com.example.rx_java_training.exceptions.NotImplementedException;
 
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
-
 
 /**
  * @author Arthur Korchagin (artur.korchagin@simbirsoft.com)
