@@ -1,6 +1,6 @@
 package com.example.rx_java_training.rx;
 
-import com.example.rx_java_training.exceptions.NotImplementedException;
+import com.example.rx_java_training.exceptions.ExpectedException;
 
 import io.reactivex.Completable;
 import io.reactivex.Single;
@@ -19,7 +19,7 @@ public class RxCompletableTraining {
      * @return {@link Completable}, который вызывает {@link #havyMethod()}
      */
     public Completable callFunction() {
-        throw new NotImplementedException();
+        return Completable.fromAction(this::havyMethod);
     }
 
     /**
@@ -30,7 +30,13 @@ public class RxCompletableTraining {
      * @return {@code Completable}
      */
     public Completable completeWhenTrue(Single<Boolean> checkSingle) {
-        throw new NotImplementedException();
+        return checkSingle.flatMapCompletable(check -> {
+            if (Boolean.TRUE.equals(check)) {
+                return Completable.complete();
+            } else {
+                return Completable.error(new ExpectedException());
+            }
+        });
     }
 
     /* Вспомогательные методы */

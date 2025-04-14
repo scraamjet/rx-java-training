@@ -13,7 +13,6 @@ import io.reactivex.observers.TestObserver;
 import io.reactivex.plugins.RxJavaPlugins;
 import io.reactivex.schedulers.TestScheduler;
 
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.reset;
 
 import com.example.rx_java_training.rx.RxMaybeTraining;
@@ -65,7 +64,7 @@ public class RxMaybeTrainingTest {
     @Test
     public void positiveOrEmpty_positiveSingle() {
         TestObserver<Integer> testObserver = mRxMaybeTraining
-                .positiveOrEmpty(Single.just(1).blockingGet())
+                .positiveOrEmpty(Single.just(1))
                 .test();
 
         testObserver.assertNoErrors();
@@ -76,7 +75,7 @@ public class RxMaybeTrainingTest {
     @Test
     public void positiveOrEmpty_negativeSingle() {
         TestObserver<Integer> testObserver = mRxMaybeTraining
-                .positiveOrEmpty(Single.just(-1).blockingGet())
+                .positiveOrEmpty(Single.just(-1))
                 .test();
 
         testObserver.assertNoValues();
